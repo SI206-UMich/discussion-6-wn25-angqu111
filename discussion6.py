@@ -28,7 +28,7 @@ def load_csv(f):
             print(f"Adding {row} to rows")
             rows.append(row)
         print(f"Final value of rows is {rows}")
-
+    
 
 
 
