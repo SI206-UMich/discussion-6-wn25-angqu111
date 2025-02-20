@@ -52,7 +52,21 @@ def get_annual_max(d):
     Note: Don't strip or otherwise modify strings. Do not change datatypes except where necessary.
         You'll have to change vals to int to compare them. 
     '''
-    pass
+    result = []
+    
+    for year, months in d.items():  
+        max_month, max_value = None, float('-inf')  
+        
+        for month, value in months.items():
+            int_value = int(value)  
+            if int_value > max_value:
+                max_value = int_value
+                max_month = month
+        
+        if max_month is not None:  
+            result.append((year, max_month, max_value))
+    
+    return result
 
 def get_month_avg(d):
     '''
